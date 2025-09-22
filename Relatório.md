@@ -24,4 +24,6 @@ logo testarei no Nano. E creio que isso não tem tanto problema, o microcontrola
 - Criar exemplos de uso para visualização dentro da Arduino IDE
 - Escrever documentação de instalação da biblioteca na Arduino IDE
 - Testar os códigos no Arduino Nano
-- Módulo de relógio digital em tela LCD 
+- ~~Módulo de relógio digital em tela LCD~~[^1]
+
+[^1]: Não será mais necessário fazer esse módulo
