@@ -1,0 +1,22 @@
+16/09
+--Primeiros contatos com os materias (Principalmente com o step motor, drivers, câmera e afins). Começo a trabalhar em circuitos
+de abertura em formato livre e parti para trabalhar com o modulo da câmera -> notei a impossibilidade para trabalhar com ele para
+embarcar o leitor de libras com circuito para acionar o step-motor , pesquisei e pensei na solução envolvendo usar a raspberry pico como 
+intermediário no processo de tradução do modulo de camera para o linux do raspberry --muito custoso e o grupo julgou melhor trabalhar com 
+webcam de comunicação usb.
+
+
+
+17 -- 20/09
+--- Começo a usar meu notebook para escrever código usando open CV para interpretação de quantidade de dedos para acionamento de motor.
+Tive grandes dificuldades de interpretar a mão e calibrar o contraste e o COI do código, porém consegui solucionar grande parte dos empecilhos e segui 
+fazendo leitura de documentação na medida do possível para lidar com os prazos.
+
+21--22/09
+----Pesquisa massiva em repositórios que já trabalhavam com interpretação de sinais de mão usando openCV -> realizei manutenção do que já havia preparado
+e continuei implementação para aumento de precisão de gestos.
+
+HOJE (22/09) consegui dar um salto muito importante na interpretação de gestos para verificar sequencia pré-definida pelo usuário (UAU) para acionamento
+porém ainda preciso dar um jeito de calibrar melhor o interpretador de sinais
+
+Muitos dos avanços foram documentados em interações via WhatsApp e atrasos justificados em reuniões.
