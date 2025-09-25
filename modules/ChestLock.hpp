@@ -1,28 +1,47 @@
+// Módulo que adiciona uma única classe chamada ChestLock
+// ChestLock serve como abstração de um dos objetos do Escape Room, o baú
+
 #ifndef CHEST_LOCK
 #define CHEST_LOCK
 
 #include "Arduino.h"
 
+// Template tem como argumento a quantidade de pinos de entrada que servirão como tranca
 template<uint8_t n_in_pins>
 class ChestLock {
 private:
+  // Array que armazena os índices dos pinos de entrada
   const uint8_t(& _in_pins)[n_in_pins];
+  // Armazena o índice pino de saída
   const uint8_t _out_pin;
 
 public:
+  // Inicialização dupla
+  // Chame o construtor padrão e depois termine a inicialização com o .begin()
   ChestLock(const uint8_t(& in_pins)[n_in_pins], uint8_t out_pin);
   void begin() const;
 
-  void tryUnlock() const;
-  void invTryUnlock() const;
+  // Ambas as funções escrevem no pino de saída o resultado das seguintes equações lógica, respectivamente
+  void tryUnlock() const; // out_pin = _in_pins[0] & _in_pins[1] & _in_pins[2] & ... & _in_pins[n_in_pins - 1]
+  void invTryUnlock() const; // out_pin = ~_in_pins[0] & ~_in_pins[1] & ~_in_pins[2] & ... & ~_in_pins[n_in_pins - 1]
 
+  // Retorna o estado do pino de saída
   bool locked() const;
+
+  // Fazem a mesma checagem das funções try acima, no entanto, não muda o estado de nenhum pino, retornando a função lógica
   bool checkAllPins() const;
   bool invCheckAllPins() const;
+
+  // Checa um único pino baseado no seu índice na array _in_pins 
   bool checkPin(uint8_t index) const;
 
+  // Retorna a quantidade de pinos de entrada
   constexpr uint8_t inPinsSize() const;
 };
+
+/*
+ * As implementações tem de ficar no .hpp devido ao fato da classe ser template
+ */
 
 template<uint8_t n_in_pins>
 ChestLock<n_in_pins>::ChestLock(const uint8_t(& in_pins)[n_in_pins], uint8_t out_pin)
