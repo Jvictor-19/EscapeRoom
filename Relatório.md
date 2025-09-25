@@ -1,4 +1,23 @@
 # Relatório
+## 25/09/2025
+### Resumo
+Documentação feita e testes no Arduino Nano foram realizados.
+
+### O que foi feito
+- Testei os módulos no Arduino Nano e funcionaram corretamente, eu sabia que não teria tanto problema pois as arquiteturas são muito parecidas, mas tive que testar
+- Escrevi comentários explicando cada componentezinho de cada uma das classes que escrevi, acredito que isso ajudará caso alguém mexa nesse código futuramente
+
+### Pensamentos e dificuldades
+Não tive muita dificuldade, foi apenas escrever.
+
+Tá chegando perto da data de entrega, 27/09, sinto que não fiz tanto comparado com a parte do raspberry pi, pelo que foi mostrado tá bem legal.
+Mas eu ainda não tenho nada muito concreto, pelo menos Calebe já apareceu com o componente que será usado para a parte do livro. Mas eu realmente queria
+um mapa das conexões que serão feitas nos pinos.
+
+### Próximos passos
+- Criar exemplos de uso para visualização dentro da Arduino IDE
+- Escrever um módulo para o leitor RFID que Calebe mostrou
+
 ## 19/09/2025
 ### Resumo
 Foram implementados quatro módulos para o Arduino, eles são bem genéricos, pois ainda não tem nada muito concreto planejado
@@ -27,3 +46,4 @@ logo testarei no Nano. E creio que isso não tem tanto problema, o microcontrola
 - ~~Módulo de relógio digital em tela LCD~~[^1]
 
 [^1]: Não será mais necessário fazer esse módulo
+
