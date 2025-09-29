@@ -1,0 +1,11 @@
+23--27/09
+
+Finalizei o projeto protótipo de visão computacional utilizando meu notebook e a Raspberry pico como microcontrolador serial do step-motor fornecido pelo professor.
+
+Conforme descrevi via whatsapp, tentei embarcar o projeto na raspiberry pi 3b+ do professor e notei que havia apenas o terminal instalado - o que impossibilita grande parte do projeto por necessidade de interface gráfica.
+
+Removi o SO unbuntu instalado (terminal) e instalei o S0 raspibian OS com a interface gráfica para teste. Após isso, constatei que a raspberry não suportaria o processamento do meu projeto - creio que pela limitação de RAM.
+
+Estava em fase de adaptação do meu código ao que serviria na raspberry (removendo a conexão serial via CM06, diminuindo resolução , lidando com o código compilado para Linux e evitando OO para tentar otimizar desempenho-- adotando um monolito de codigo)
+
+Conforme também descrevi, meu código apresenta inconsistências motivadas pela luminosidade do local.
