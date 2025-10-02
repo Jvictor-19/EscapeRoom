@@ -2,7 +2,7 @@
 ## 02/10/2025
 ### Resumo
 Essa foi a semana de mexer com RFID, o prazo era até o dia 27/09, mas Calebe disse que tava ok passar, então comprei 2 leitores pelo mercado livre, que chegaram na segunda-feira. Desde o dia da entrega
-fique estudando como os leitores de RFID funcionam. O código foi implementado com sucesso e acredito que é só mudar as configurações do programa que ele vai funcionar para vários leitores, não só dois. 
+fiquei estudando como os leitores de RFID funcionam. O código foi implementado com sucesso. Ele possui parâmetros que acredito englobarem muitas situações, não só dois leitores, como tenho aqui. 
 Também acredito que esse programa já pode ser usado no escape room, pelo menos pelo que eu sei de informação sobre os desafios.
 
 ### O que foi implementado
@@ -10,8 +10,8 @@ Também acredito que esse programa já pode ser usado no escape room, pelo menos
   
   Esse arquivo já existia, mas agora ele comporta o programa que talvez rode no microcontrolador do escape room. É o arquivo principal que deve ser carregado.
   No topo do programa há algumas constantes que servem para configurar o programa para o uso, não sei quantos livros serão usados no desafio, Calebe não respondeu a minha pergunta, então fiz
-  expansível, vai comportar vários junto enquanto tiver pinos suficientes no Microcontrolador. Tudo está comentado e explicado no código, acesso o arquivo e configure o que for necessário. 
-  Constei com a saída lógica após a leitura correta dos cartões e tags, imagino que isso se ligue num relê que destrave alguma tranca, e também imaginei que seria necessário um botão mestre
+  expansível, vai comportar vários leitores juntos enquanto tiver pinos suficientes no Microcontrolador. Tudo está comentado e explicado no código, acesse o arquivo e configure o que for necessário. 
+  Constei com uma saída lógica após a leitura correta dos cartões e tags, imagino que isso se ligue num relê que destrave alguma tranca, e também imaginei que seria necessário um botão mestre
   que ative o sinal lógico independente do estado dos leitores.
 
 ### Pensamentos e dificuldades
@@ -54,4 +54,5 @@ logo testarei no Nano. E creio que isso não tem tanto problema, o microcontrola
 - ~~Módulo de relógio digital em tela LCD~~[^1]
 
 [^1]: Não será mais necessário fazer esse módulo
+
 
