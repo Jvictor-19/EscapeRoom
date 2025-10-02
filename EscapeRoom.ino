@@ -8,8 +8,8 @@ constexpr uint8_t       N_READERS = 2;                       // Número de leito
 constexpr uint8_t       RESET_PIN = 3;                       // Conexão rst do leitor, um pino compartilhado para todos os leitores
 constexpr uint8_t       SDA_PINS[N_READERS] = { 2, 4 };      // Conexões SDA/SS dos leitores, um pino para cada leitor
 constexpr uint8_t       LOCK_PIN = 5;                        // Pino de saída 
+constexpr unsigned long UNLOCKED_TIME = 30000;               // Tempo que a saída fica ativa antes de verificar novamente
 constexpr uint8_t       UIDS[N_READERS][4] = {               // UID que cada leitor estará procurando
-constexpr unsigned long UNLOCKED_TIME = 30000                // Tempo que a saída fica ativa antes de verificar novamente
 	// Na função loop tem comentários explicando como ler os UIDs usando este mesmo código-fonte
 	// Aqui estão as UIDs dos meus cartões
 	{ 0xFA, 0x97, 0xED, 0x05 },
@@ -18,8 +18,8 @@ constexpr unsigned long UNLOCKED_TIME = 30000                // Tempo que a saí
 
 // Variáveis globais
 SimpleOutput lock(LOCK_PIN);
-MFRC522 readers[N_READERS];
-bool areTagsPresent; 
+MFRC522      readers[N_READERS];
+bool         are_tags_present; 
 
 // Função para debug
 void printUID(const MFRC522& reader) {
@@ -51,11 +51,11 @@ void setup() {
 }
 
 void loop() {
-	areTagsPresent = true;
+	are_tags_present = true;
 
 	for(uint8_t i = 0; i < N_READERS; i++) {
 		if(!readers[i].PICC_IsNewCardPresent()) {
-			areTagsPresent = false;
+			are_tags_present = false;
 			break;
 		}
 		readers[i].PICC_ReadCardSerial();
@@ -63,16 +63,17 @@ void loop() {
 		// Descomente a linha imediatamente abaixo para habilitar o print dos cartões que se aproximam, qualquer leitor serve
 		// printUID(readers[i]);
 
-		// Isso é uma gambiarra, mas a outra forma de ler continuamente é mais complicada
+		// Isso é uma gambiarra, mas a outra forma de ler continuamente é bem mais complicada
+		// https://github.com/miguelbalboa/rfid/wiki/Useful-code-snippets
 		readers[i].PICC_IsNewCardPresent();
 
 		if(!sameUID(readers[i].uid.uidByte, UIDS[i])) {
-			areTagsPresent = false;
+			are_tags_present = false;
 			break;
 		}
 	}
 
-	if(areTagsPresent) {
+	if(are_tags_present) {
 		lock.set();
 		delay(UNLOCKED_TIME);
 	}
